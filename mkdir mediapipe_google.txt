@@ -1,0 +1,110 @@
+raspberry@raspberry-desktop:~$ mkdir mediapipe_google
+raspberry@raspberry-desktop:~$ cd mediapipe_google
+raspberry@raspberry-desktop:~/mediapipe_google$ pip install mediapipe
+error: externally-managed-environment
+
+× This environment is externally managed
+╰─> To install Python packages system-wide, try apt install
+    python3-xyz, where xyz is the package you are trying to
+    install.
+    
+    If you wish to install a non-Debian-packaged Python package,
+    create a virtual environment using python3 -m venv path/to/venv.
+    Then use path/to/venv/bin/python and path/to/venv/bin/pip. Make
+    sure you have python3-full installed.
+    
+    If you wish to install a non-Debian packaged Python application,
+    it may be easiest to use pipx install xyz, which will manage a
+    virtual environment for you. Make sure you have pipx installed.
+    
+    See /usr/share/doc/python3.12/README.venv for more information.
+
+note: If you believe this is a mistake, please contact your Python installation or OS distribution provider. You can override this, at the risk of breaking your Python installation or OS, by passing --break-system-packages.
+hint: See PEP 668 for the detailed specification.
+raspberry@raspberry-desktop:~/mediapipe_google$ python3 -m venv venv
+raspberry@raspberry-desktop:~/mediapipe_google$ source venv/bin/activate
+(venv) raspberry@raspberry-desktop:~/mediapipe_google$ 
+(venv) raspberry@raspberry-desktop:~/mediapipe_google$ pip install mediapipe
+Collecting mediapipe
+  Using cached mediapipe-0.10.18-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (9.7 kB)
+Collecting absl-py (from mediapipe)
+  Downloading absl_py-2.2.1-py3-none-any.whl.metadata (2.4 kB)
+Collecting attrs>=19.1.0 (from mediapipe)
+  Using cached attrs-25.3.0-py3-none-any.whl.metadata (10 kB)
+Collecting flatbuffers>=2.0 (from mediapipe)
+  Using cached flatbuffers-25.2.10-py2.py3-none-any.whl.metadata (875 bytes)
+Collecting jax (from mediapipe)
+  Using cached jax-0.5.3-py3-none-any.whl.metadata (22 kB)
+Collecting jaxlib (from mediapipe)
+  Using cached jaxlib-0.5.3-cp312-cp312-manylinux2014_aarch64.whl.metadata (1.2 kB)
+Collecting matplotlib (from mediapipe)
+  Using cached matplotlib-3.10.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (11 kB)
+Collecting numpy<2 (from mediapipe)
+  Using cached numpy-1.26.4-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (62 kB)
+Collecting opencv-contrib-python (from mediapipe)
+  Using cached opencv_contrib_python-4.11.0.86-cp37-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (20 kB)
+Collecting protobuf<5,>=4.25.3 (from mediapipe)
+  Using cached protobuf-4.25.6-cp37-abi3-manylinux2014_aarch64.whl.metadata (541 bytes)
+Collecting sounddevice>=0.4.4 (from mediapipe)
+  Using cached sounddevice-0.5.1-py3-none-any.whl.metadata (1.4 kB)
+Collecting sentencepiece (from mediapipe)
+  Using cached sentencepiece-0.2.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (7.7 kB)
+Collecting CFFI>=1.0 (from sounddevice>=0.4.4->mediapipe)
+  Using cached cffi-1.17.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (1.5 kB)
+Collecting ml_dtypes>=0.4.0 (from jax->mediapipe)
+  Using cached ml_dtypes-0.5.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (21 kB)
+Collecting opt_einsum (from jax->mediapipe)
+  Using cached opt_einsum-3.4.0-py3-none-any.whl.metadata (6.3 kB)
+Collecting scipy>=1.11.1 (from jax->mediapipe)
+  Using cached scipy-1.15.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (61 kB)
+Collecting contourpy>=1.0.1 (from matplotlib->mediapipe)
+  Using cached contourpy-1.3.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (5.4 kB)
+Collecting cycler>=0.10 (from matplotlib->mediapipe)
+  Using cached cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools>=4.22.0 (from matplotlib->mediapipe)
+  Using cached fonttools-4.56.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (101 kB)
+Collecting kiwisolver>=1.3.1 (from matplotlib->mediapipe)
+  Using cached kiwisolver-1.4.8-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl.metadata (6.2 kB)
+Collecting packaging>=20.0 (from matplotlib->mediapipe)
+  Using cached packaging-24.2-py3-none-any.whl.metadata (3.2 kB)
+Collecting pillow>=8 (from matplotlib->mediapipe)
+  Using cached pillow-11.1.0-cp312-cp312-manylinux_2_28_aarch64.whl.metadata (9.1 kB)
+Collecting pyparsing>=2.3.1 (from matplotlib->mediapipe)
+  Using cached pyparsing-3.2.3-py3-none-any.whl.metadata (5.0 kB)
+Collecting python-dateutil>=2.7 (from matplotlib->mediapipe)
+  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting pycparser (from CFFI>=1.0->sounddevice>=0.4.4->mediapipe)
+  Using cached pycparser-2.22-py3-none-any.whl.metadata (943 bytes)
+Collecting six>=1.5 (from python-dateutil>=2.7->matplotlib->mediapipe)
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Using cached mediapipe-0.10.18-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (33.1 MB)
+Using cached attrs-25.3.0-py3-none-any.whl (63 kB)
+Using cached flatbuffers-25.2.10-py2.py3-none-any.whl (30 kB)
+Using cached numpy-1.26.4-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (13.9 MB)
+Using cached protobuf-4.25.6-cp37-abi3-manylinux2014_aarch64.whl (293 kB)
+Using cached sounddevice-0.5.1-py3-none-any.whl (32 kB)
+Downloading absl_py-2.2.1-py3-none-any.whl (277 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 277.3/277.3 kB 133.9 kB/s eta 0:00:00
+Using cached jax-0.5.3-py3-none-any.whl (2.4 MB)
+Using cached jaxlib-0.5.3-cp312-cp312-manylinux2014_aarch64.whl (95.8 MB)
+Using cached matplotlib-3.10.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (8.5 MB)
+Using cached opencv_contrib_python-4.11.0.86-cp37-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (47.9 MB)
+Using cached sentencepiece-0.2.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (1.3 MB)
+Using cached cffi-1.17.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (478 kB)
+Using cached contourpy-1.3.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (307 kB)
+Using cached cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Using cached fonttools-4.56.0-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (4.8 MB)
+Using cached kiwisolver-1.4.8-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (1.5 MB)
+Using cached ml_dtypes-0.5.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (4.6 MB)
+Using cached packaging-24.2-py3-none-any.whl (65 kB)
+Using cached pillow-11.1.0-cp312-cp312-manylinux_2_28_aarch64.whl (4.4 MB)
+Using cached pyparsing-3.2.3-py3-none-any.whl (111 kB)
+Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Using cached scipy-1.15.2-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (35.2 MB)
+Using cached opt_einsum-3.4.0-py3-none-any.whl (71 kB)
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Using cached pycparser-2.22-py3-none-any.whl (117 kB)
+Installing collected packages: sentencepiece, flatbuffers, six, pyparsing, pycparser, protobuf, pillow, packaging, opt_einsum, numpy, kiwisolver, fonttools, cycler, attrs, absl-py, scipy, python-dateutil, opencv-contrib-python, ml_dtypes, contourpy, CFFI, sounddevice, matplotlib, jaxlib, jax, mediapipe
+        
+Successfully installed CFFI-1.17.1 absl-py-2.2.1 attrs-25.3.0 contourpy-1.3.1 cycler-0.12.1 flatbuffers-25.2.10 fonttools-4.56.0 jax-0.5.3 jaxlib-0.5.3 kiwisolver-1.4.8 matplotlib-3.10.1 mediapipe-0.10.18 ml_dtypes-0.5.1 numpy-1.26.4 opencv-contrib-python-4.11.0.86 opt_einsum-3.4.0 packaging-24.2 pillow-11.1.0 protobuf-4.25.6 pycparser-2.22 pyparsing-3.2.3 python-dateutil-2.9.0.post0 scipy-1.15.2 sentencepiece-0.2.0 six-1.17.0 sounddevice-0.5.1
+

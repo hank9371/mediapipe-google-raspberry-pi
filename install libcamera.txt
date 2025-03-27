@@ -1,0 +1,79 @@
+raspberry@raspberry-desktop:~$ sudo apt install libcamera-tools -y
+[sudo] password for raspberry: 
+正在讀取套件清單... 完成
+正在重建相依關係... 完成  
+正在讀取狀態資料... 完成  
+libcamera-tools is already the newest version (0.2.0-3fakesync1build6).
+升級 0 個，新安裝 0 個，移除 0 個，有 8 個未被升級。
+raspberry@raspberry-desktop:~$ sudo apt install libcamera-tools -y
+正在讀取套件清單... 完成
+正在重建相依關係... 完成  
+正在讀取狀態資料... 完成  
+libcamera-tools is already the newest version (0.2.0-3fakesync1build6).
+升級 0 個，新安裝 0 個，移除 0 個，有 8 個未被升級。
+raspberry@raspberry-desktop:~$ libcamera-hello --list-cameras
+libcamera-hello: command not found
+raspberry@raspberry-desktop:~$ dpkg -L libcamera-tools | grep libcamera-hello
+raspberry@raspberry-desktop:~$ echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
+raspberry@raspberry-desktop:~$ sudo apt update
+sudo apt reinstall libcamera-tools
+已有:1 http://ports.ubuntu.com/ubuntu-ports noble InRelease
+已有:2 http://ports.ubuntu.com/ubuntu-ports noble-updates InRelease
+已有:3 http://ports.ubuntu.com/ubuntu-ports noble-backports InRelease
+已有:4 http://ports.ubuntu.com/ubuntu-ports noble-security InRelease
+正在讀取套件清單... 完成
+正在重建相依關係... 完成
+正在讀取狀態資料... 完成  
+8 packages can be upgraded. Run 'apt list --upgradable' to see them.
+正在讀取套件清單... 完成
+正在重建相依關係... 完成  
+正在讀取狀態資料... 完成  
+升級 0 個，新安裝 0 個，重新安裝 1 個，移除 0 個，有 8 個未被升級。
+需要下載 321 kB 的套件檔。
+此操作完成之後，會多佔用 0 B 的磁碟空間。
+下載:1 http://ports.ubuntu.com/ubuntu-ports noble/universe arm64 libcamera-tools arm64 0.2.0-3fakesync1build6 [321 kB]
+取得 321 kB 用了 3s (105 kB/s)            
+（讀取資料庫 ... 目前共安裝了 142015 個檔案和目錄。）
+正在準備解包 .../libcamera-tools_0.2.0-3fakesync1build6_arm64.deb……
+Unpacking libcamera-tools (0.2.0-3fakesync1build6) over (0.2.0-3fakesync1build6) ...
+設定 libcamera-tools (0.2.0-3fakesync1build6) ...
+raspberry@raspberry-desktop:~$ libcamera-hello --list-cameras
+libcamera-hello: command not found
+raspberry@raspberry-desktop:~$ dpkg -L libcamera-tools | grep /bin/
+/usr/bin/cam
+/usr/bin/ipa_verify
+/usr/bin/lc-compliance
+/usr/bin/libcamerify
+/usr/bin/qcam
+raspberry@raspberry-desktop:~$ lsb_release -a
+No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 24.04.2 LTS
+Release:	24.04
+Codename:	noble
+raspberry@raspberry-desktop:~$ apt search libcamera | grep -i -- '-utils\|-tools\|cam'
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+gstreamer1.0-libcamera/noble,now 0.2.0-3fakesync1build6 arm64 [installed,automatic]
+  complex camera support library (GStreamer plugin)
+libcamera-dev/noble 0.2.0-3fakesync1build6 arm64
+  complex camera support library (development files)
+libcamera-doc/noble 0.2.0-3fakesync1build6 all
+  complex camera support library (documentation)
+libcamera-ipa/noble 0.2.0-3fakesync1build6 arm64
+  complex camera support library (IPA modules)
+libcamera-tools/noble,now 0.2.0-3fakesync1build6 arm64 [installed]
+  complex camera support library (tools)
+libcamera-v4l2/noble 0.2.0-3fakesync1build6 arm64
+  complex camera support library (V4L2 module)
+libcamera0.2/noble,now 0.2.0-3fakesync1build6 arm64 [installed,automatic]
+  complex camera support library
+libspa-0.2-libcamera/noble-updates 1.0.5-1ubuntu3 arm64
+  libraries for the PipeWire multimedia server - libcamera plugin
+pipewire-libcamera/noble-updates 1.0.5-1ubuntu3 all
+  transitional package for libspa-0.2-libcamera
+python3-libcamera/noble,now 0.2.0-3fakesync1build6 arm64 [installed]
+  complex camera support library (Python bindings)
+
