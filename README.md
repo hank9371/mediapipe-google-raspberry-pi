@@ -7,7 +7,7 @@ OpenCV 可以讀取到數據幀 (ret 是 True, frame 不是 None)，並且幀的
 但是，讀取到的數據幀內容是錯誤的 (顯示為純綠色)，即使嘗試強制設定相機宣稱支援的顏色格式 (FOURCC) 也無效。
 這強烈暗示問題出在更深層次的軟體堆疊 Bug 或不相容性，特別是針對以下這個組合：
 
-硬體：Raspberry Pi (您未指定型號) + Camera Module v1.3 (OV5647)
+硬體：Raspberry Pi 4B + Camera Module v1.3 (OV5647)
 作業系統：Ubuntu 24.04 LTS ARM64
 相機驅動：libcamera 及其 V4L2 模擬層
 中介層：GStreamer (OpenCV 警告中提到)
